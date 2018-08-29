@@ -11,6 +11,11 @@ feature "User can visit root page" do
   it 'can generate a list of the 10 closest stations to the entered zip codes within 6 miles sorted by distance, limited to electric and propane, and it should show the name, address, fuel types, distance and access times for each station' do
     visit '/'
 
-    
+    fill_in :q, with: '80203'
+
+    click_on 'Locate'
+
+    expect(current_path).to eq('/search')
+    expect(page).to have_content("Stations:")
   end
 end
