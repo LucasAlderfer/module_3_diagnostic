@@ -1,1 +1,11 @@
-<p>Stations: <%= @stations %></p>
+<p>Stations:
+  <% @stations.each do |station| %>
+  <ul>
+    <li>Name: <%= station.name %></li>
+    <li>Address: <%= station.street %>, <%= station.zip %></li>
+    <li>Fuel Type: <%= station.fuel %></li>
+    <li>Distance: <%= station.distance %> miles</li>
+    <li>Access: <%= station.access %></li>
+  </ul>
+  <% end %>
+</p>
